@@ -20,7 +20,7 @@ class UserForm(UserCreationForm):
 class TeacherProfileForm(forms.ModelForm):
     class Meta():
         model =  Teacher
-        fields = ['name','unit_name','phone','email']
+        fields = ['name','subject_name','phone','email']
         widgets = {
                 'name': forms.TextInput(),
                 'subject_name': forms.TextInput(),
@@ -38,10 +38,10 @@ class TeacherProfileForm(forms.ModelForm):
 class StudentProfileForm(forms.ModelForm):
     class Meta():
         model =  Student
-        fields = ['name','admission_no','phone','email']
+        fields = ['name','roll_no','phone','email']
         widgets = {
                 'name': forms.TextInput(),
-                'admission_no': forms.NumberInput(),
+                'roll_no': forms.NumberInput(),
                 'phone': forms.NumberInput(),
                 'email': forms.EmailInput(),
                 }

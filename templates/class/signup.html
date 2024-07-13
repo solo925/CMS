@@ -1,3 +1,18 @@
 {% extends 'class/base.html' %}
- {% block content %}
- {% endblock content %}
+{% load static %}
+{% block content %}
+
+  <div class="login-page">
+  <img src="{% static 'images/login-background.PNG' %}" alt="">
+    <div class="signup">
+      <h1>Sign Up</h1>
+      <br>
+      <a href="{% url 'class:StudentSignUp' %}"><p>I'm a Student</p> </a>
+      <br>
+      <a href="{% url 'class:TeacherSignUp' %}"><p>I'm a Teacher</p> </a>
+    </div>
+    </div>
+
+
+
+{% endblock %}

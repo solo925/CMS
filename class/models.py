@@ -31,10 +31,10 @@ class Student(models.Model):
     roll_no = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     phone = models.IntegerField()
-    student_profile_pic = models.ImageField(upload_to="classroom/student_profile_pic",blank=True)
+    student_profile_pic = models.ImageField(upload_to="class/student_profile_pic",blank=True)
 
     def get_absolute_url(self):
-        return reverse('classroom:student_detail',kwargs={'pk':self.pk})
+        return reverse('class:student_detail',kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.name
@@ -48,11 +48,11 @@ class Teacher(models.Model):
     subject_name = models.CharField(max_length=250)
     email = models.EmailField(max_length=254)
     phone = models.IntegerField()
-    teacher_profile_pic = models.ImageField(upload_to="classroom/teacher_profile_pic",blank=True)
+    teacher_profile_pic = models.ImageField(upload_to="class/teacher_profile_pic",blank=True)
     class_students = models.ManyToManyField(Student,through="StudentsInClass")
 
     def get_absolute_url(self):
-        return reverse('classroom:teacher_detail',kwargs={'pk':self.pk})
+        return reverse('class:teacher_detail',kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.name
